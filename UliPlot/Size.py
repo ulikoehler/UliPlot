@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from .Figure import figure
 
-__all__ = ["huge", "size"]
+__all__ = ["huge", "size", "medium", "medium_square", "large", "wide", "huge_wide"]
 
 def size(w=15, h=8, fig=None):
     """
@@ -15,7 +15,19 @@ def huge(fig=None):
     """
     size(20, 10, fig)
 
-def normal(fig=None):
+def medium(fig=None):
+    """
+    Make the figure medium: 10x5 inches
+    """
+    size(10, 5, fig)
+
+def medium_square(fig=None):
+    """
+    Make the figure a medium square: 7x7 inches
+    """
+    size(7, 7, fig)
+
+def large(fig=None):
     """
     Make the figure large: 15x8 inches
     """
