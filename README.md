@@ -12,5 +12,6 @@ pip3 install git+https://github.com/ulikoehler/UliPlot.git
 ### How to use
 
 ```python
+from matplotlib import pyplot as plt
 import UliPlot as upl
 ```
