@@ -15,3 +15,6 @@ pip3 install git+https://github.com/ulikoehler/UliPlot.git
 from matplotlib import pyplot as plt
 import UliPlot as upl
 ```
+
+Blog posts with specific topics on how to use UliPlot:
+- [How to auto-fit Pandas pd.to_excel() XLSX column width](https://techoverflow.net/2021/03/05/how-to-auto-fit-pandas-pd-to_excel-xlsx-column-width/)
