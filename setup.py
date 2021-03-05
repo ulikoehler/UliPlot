@@ -9,7 +9,7 @@ if sys.version_info < (3, 0):
 
 setup(name='UliPlot',
       version='0.0.1',
-      description='Utilities for convenient plotting',
+      description='Utilities for convenient plotting using matplotlib and other pydata libraries',
       author='Uli Köhler',
       author_email='ukoehler@techoverflow.net',
       url='https://techoverflow.net/',
@@ -18,7 +18,8 @@ setup(name='UliPlot',
       include_package_data=True,
       install_requires=['numpy (>= 1.5)', 'matplotlib'],
       extras_require= {
-        'SciPy functionality': ['scipy (>= 0.5)']
+        'SciPy functionality': ['scipy (>= 0.5)'],
+        'Pandas functionality': ['pandas'],
       },
       test_suite='tests',
       tests_require=['coverage', 'mock', 'parameterized'],
