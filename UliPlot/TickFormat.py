@@ -108,7 +108,7 @@ def set_axis_tick_format_date(axis, dateformat="%Y%m%d %H%M%S", tz=None, set_maj
         axis.set_minor_formatter(formatter)
 
 
-def set_yaxis_tick_format_date(dateformat="%Y%m%d %H%M%S", tz=None, ax=None, set_major=True, set_minor=True):
+def set_yaxis_tick_format_date(dateformat="%Y-%m-%d %H:%M:%S", tz=None, ax=None, set_major=True, set_minor=True):
     """
     Set the number of decimals and the unit for formatting the Y axis.
     
@@ -124,7 +124,7 @@ def set_yaxis_tick_format_date(dateformat="%Y%m%d %H%M%S", tz=None, ax=None, set
     # Set formatter
     set_axis_tick_format_date(ax.yaxis, dateformat=dateformat, tz=tz, set_major=set_major, set_minor=set_minor)
 
-def set_xaxis_tick_format_date(dateformat="%Y%m%d %H%M%S", tz=None, ax=None, set_major=True, set_minor=True):
+def set_xaxis_tick_format_date(dateformat="%Y-%m-%d %H:%M:%S", tz=None, ax=None, set_major=True, set_minor=True):
     """
     Set the number of decimals and the unit for formatting the X axis.
     
