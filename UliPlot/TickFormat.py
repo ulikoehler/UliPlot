@@ -87,11 +87,11 @@ def set_xaxis_tick_format_float(decimals=3, unit=None, ax=None, set_major=True, 
     # Set formatter
     set_axis_tick_format_float(ax.xaxis, decimals=decimals, unit=unit, set_major=set_major, set_minor=set_minor)
 
-def set_axis_tick_format_date(axis, dateformat="%Y%m%d %H%M%S", tz=None, set_major=True, set_minor=True):
+def set_axis_tick_format_datetime(axis, dateformat="%Y%m%d %H%M%S", tz=None, set_major=True, set_minor=True):
     """
     Set the date format for formatting the given X or Y axis.
     Typically, this is not called directly.
-    Usually you should use set_xaxis_tick_format_date() or set_yaxis_tick_format_date()
+    Usually you should use set_xaxis_tick_format_datetime() or set_yaxis_tick_format_datetime()
     instead.
 
     :param axis: The axis (X or Y) to set the formatter for
@@ -108,7 +108,7 @@ def set_axis_tick_format_date(axis, dateformat="%Y%m%d %H%M%S", tz=None, set_maj
         axis.set_minor_formatter(formatter)
 
 
-def set_yaxis_tick_format_date(dateformat="%Y%m%d %H%M%S", tz=None, ax=None, set_major=True, set_minor=True):
+def set_yaxis_tick_format_datetime(dateformat="%Y%m%d %H%M%S", tz=None, ax=None, set_major=True, set_minor=True):
     """
     Set the number of decimals and the unit for formatting the Y axis.
     
@@ -122,9 +122,9 @@ def set_yaxis_tick_format_date(dateformat="%Y%m%d %H%M%S", tz=None, ax=None, set
     if ax is None:
         ax = plt.gca()
     # Set formatter
-    set_axis_tick_format_date(ax.yaxis, dateformat=dateformat, tz=tz, set_major=set_major, set_minor=set_minor)
+    set_axis_tick_format_datetime(ax.yaxis, dateformat=dateformat, tz=tz, set_major=set_major, set_minor=set_minor)
 
-def set_xaxis_tick_format_date(dateformat="%Y%m%d %H%M%S", tz=None, ax=None, set_major=True, set_minor=True):
+def set_xaxis_tick_format_datetime(dateformat="%Y%m%d %H%M%S", tz=None, ax=None, set_major=True, set_minor=True):
     """
     Set the number of decimals and the unit for formatting the X axis.
     
@@ -138,5 +138,5 @@ def set_xaxis_tick_format_date(dateformat="%Y%m%d %H%M%S", tz=None, ax=None, set
     if ax is None:
         ax = plt.gca()
     # Set formatter
-    set_axis_tick_format_date(ax.xaxis, dateformat=dateformat, tz=tz, set_major=set_major, set_minor=set_minor)
+    set_axis_tick_format_datetime(ax.xaxis, dateformat=dateformat, tz=tz, set_major=set_major, set_minor=set_minor)
 
