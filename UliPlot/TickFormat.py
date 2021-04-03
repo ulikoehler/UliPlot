@@ -12,9 +12,9 @@ def set_axis_tick_format_func(func, axis, set_major=True, set_minor=True):
     """
     formatter = mtick.FuncFormatter(func)
     if set_major:
-        axis.yaxis.set_major_formatter(formatter)
+        axis.set_major_formatter(formatter)
     if set_minor:
-        axis.yaxis.set_minor_formatter(formatter)
+        axis.set_minor_formatter(formatter)
 
 def set_yaxis_tick_format_func(func, ax=None, set_major=True, set_minor=True):
     """
