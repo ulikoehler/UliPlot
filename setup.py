@@ -8,7 +8,7 @@ if sys.version_info < (3, 0):
     sys.exit(1)
 
 setup(name='UliPlot',
-      version='0.1.1',
+      version='0.1.2',
       description='Utilities for convenient plotting using matplotlib and other pydata libraries',
       author='Uli Köhler',
       author_email='ukoehler@techoverflow.net',
