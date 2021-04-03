@@ -153,7 +153,7 @@ def set_axis_tick_format_percent(axis, fullscale=1.0, set_major=True, set_minor=
     :param bool set_minor: If True, set the formatter as minor tick formatter
     """
     # Set formatter
-    formatter = mdates.PercentFormatter(fullscale)
+    formatter = mtick.PercentFormatter(fullscale)
     if set_major:
         axis.set_major_formatter(formatter)
     if set_minor:
