@@ -110,7 +110,7 @@ def set_axis_tick_format_datetime(axis, dateformat="%Y%m%d %H%M%S", tz=None, set
 
 def set_yaxis_tick_format_datetime(dateformat="%Y-%m-%d %H:%M:%S", tz=None, ax=None, set_major=True, set_minor=True):
     """
-    Set the number of decimals and the unit for formatting the Y axis.
+    Configure the Y axis with datetime format ticks
     
     :param str dateformat: The strftime date format string, e.g. "%Y%m%d %H%M%S"
     :param datetime.tzinfo tz: The time zone for the ticks, uses matplotlib default if None
@@ -126,7 +126,7 @@ def set_yaxis_tick_format_datetime(dateformat="%Y-%m-%d %H:%M:%S", tz=None, ax=N
 
 def set_xaxis_tick_format_datetime(dateformat="%Y-%m-%d %H:%M:%S", tz=None, ax=None, set_major=True, set_minor=True):
     """
-    Set the number of decimals and the unit for formatting the X axis.
+    Configure the X axis with datetime format ticks
     
     :param str dateformat: The strftime date format string, e.g. "%Y%m%d %H%M%S"
     :param datetime.tzinfo tz: The time zone for the ticks, uses matplotlib default if None
@@ -140,3 +140,52 @@ def set_xaxis_tick_format_datetime(dateformat="%Y-%m-%d %H:%M:%S", tz=None, ax=N
     # Set formatter
     set_axis_tick_format_datetime(ax.xaxis, dateformat=dateformat, tz=tz, set_major=set_major, set_minor=set_minor)
 
+def set_axis_tick_format_percent(axis, fullscale=1.0, set_major=True, set_minor=True):
+    """
+    Set the percent format for formatting the given X or Y axis.
+    Typically, this is not called directly.
+    Usually you should use set_xaxis_tick_format_percent() or set_yaxis_tick_format_percent()
+    instead.
+
+    :param axis: The axis (X or Y) to set the formatter for
+    :param fullscale: What value is considered to be 100%. Use 100.0 for values that are already scaled as percent.
+    :param bool set_major: If True, set the formatter as major tick formatter
+    :param bool set_minor: If True, set the formatter as minor tick formatter
+    """
+    # Set formatter
+    formatter = mdates.PercentFormatter(fullscale)
+    if set_major:
+        axis.set_major_formatter(formatter)
+    if set_minor:
+        axis.set_minor_formatter(formatter)
+
+
+def set_yaxis_tick_format_percent(fullscale=1.0, ax=None, set_major=True, set_minor=True):
+    """
+    Set the number of decimals and the unit for formatting the Y axis.
+    
+    :param fullscale: What value is considered to be 100%. Use 100.0 for values that are already scaled as percent.
+    :param Axis ax: You can specify an ax object here. If None, plt.gca() is used.
+    :param bool set_major: If True, set the formatter as major tick formatter
+    :param bool set_minor: If True, set the formatter as minor tick formatter
+    """
+    # Create ax unless specfied
+    if ax is None:
+        ax = plt.gca()
+    # Set formatter
+    set_axis_tick_format_percent(ax.yaxis, fullscale, set_major=set_major, set_minor=set_minor)
+
+def set_xaxis_tick_format_percent(fullscale=1.0, ax=None, set_major=True, set_minor=True):
+    """
+    Set the number of decimals and the unit for formatting the X axis.
+    
+    :param fullscale: What value is considered to be 100%. Use 100.0 for values that are already scaled as percent.
+    :param Axis ax: You can specify an ax object here. If None, plt.gca() is used.
+    :param bool set_major: If True, set the formatter as major tick formatter
+    :param bool set_minor: If True, set the formatter as minor tick formatter
+    """
+    # Create ax unless specfied
+    if ax is None:
+        ax = plt.gca()
+    # Set formatter
+    set_axis_tick_format_datetime(ax.xaxis, fullscale, set_major=set_major, set_minor=set_minor)
