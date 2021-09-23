@@ -29,5 +29,5 @@ def auto_adjust_xlsx_column_width(df, writer, sheet_name, margin=2, index=True):
         writer.sheets[sheet_name].set_column(col_idx, col_idx, column_length + margin)
     # Compute column width of index column (if enabled)
     if index: # If the index column is being exported
-        index_length =  max(df.index.astype(str).map(len).max(), len(column))
+        index_length =  max(df.index.astype(str).map(len).max(), len(df.index.name or ""))
         writer.sheets[sheet_name].set_column(0, 0, index_length + margin)
