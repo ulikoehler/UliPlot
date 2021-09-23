@@ -17,7 +17,7 @@ def auto_adjust_xlsx_column_width(df, writer, sheet_name, margin=2, index=True):
     :param int margin: How many extra space (beyond the maximum size of the string)
     :param bool index: Whether the DataFrame's index is inserted as a separate column (if index=False in df.to_xlsx() set index=False here!)
     """
-    for column in df:
+    for column in df.columns:
         # Convert the value of the columns to string and select the 
         column_length =  max(df[column].astype(str).map(len).max(), len(column))
         # Get index of column in XLSX
