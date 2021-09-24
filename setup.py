@@ -8,7 +8,7 @@ if sys.version_info < (3, 0):
     sys.exit(1)
 
 setup(name='UliPlot',
-      version='0.1.4',
+      version='0.2.0',
       description='Utilities for convenient plotting using matplotlib and other pydata libraries',
       author='Uli Köhler',
       author_email='ukoehler@techoverflow.net',
@@ -16,7 +16,7 @@ setup(name='UliPlot',
       license='Apache License v2.0',
       packages=find_packages(exclude=['tests*']),
       include_package_data=True,
-      install_requires=['numpy (>= 1.5)', 'matplotlib'],
+      install_requires=['numpy (>= 1.5)', 'matplotlib', 'openpyxl'],
       extras_require= {
         'SciPy functionality': ['scipy (>= 0.5)'],
         'Pandas functionality': ['pandas'],
