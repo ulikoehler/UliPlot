@@ -67,7 +67,7 @@ def auto_adjust_xlsx_column_width(df, writer, sheet_name, margin=3, length_facto
             sheet.set_column(col_idx, col_idx, column_length * length_factor + margin)
     # Compute column width of index column (if enabled)
     if index: # If the index column is being exported
-        index_length =  max(df.index.apply(_to_str).map(text_length).max(), text_length(df.index.name))
+        index_length =  max(df.index.map(_to_str).map(text_length).max(), text_length(df.index.name))
         if is_openpyxl:
             sheet.column_dimensions["A"].width = index_length * length_factor + margin
         else: # is_xlsxwriter
