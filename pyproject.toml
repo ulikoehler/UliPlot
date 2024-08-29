@@ -2,17 +2,38 @@
 name = "UliPlot"
 version = "0.2.3"
 description = "Utilities for convenient plotting using matplotlib and other pydata libraries"
-authors = ["Uli Köhler <ukoehler@techoverflow.net>"]
+authors = ["Uli Köhler <github@techoverflow.net>"]
 license = "Apache License v2.0"
 readme = "README.md"
 packages = [
     { include = "UliPlot" },
 ]
+classifiers = [
+    'Development Status :: 3 - Alpha',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Education',
+    'Intended Audience :: Information Technology',
+    'License :: DFSG approved',
+    'License :: OSI Approved :: Apache Software License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Framework :: Matplotlib',
+    'Topic :: Scientific/Engineering',
+    'Topic :: Scientific/Engineering :: Bio-Informatics',
+    'Topic :: Scientific/Engineering :: Information Analysis',
+    'Topic :: Scientific/Engineering :: Physics',
+    'Topic :: Scientific/Engineering :: Information Analysis'
+]
 
 [tool.poetry.dependencies]
-python = "^3.10"
-matplotlib = "^3.8.3"
-uliengineering = "^0.4.10"
+python = "^3.8"
+matplotlib = ">=3.8.3"
+uliengineering = ">=0.4.10"
+openpyxl = "*"
+
+[tool.poetry.urls]
+homepage = "https://techoverflow.net/"
 
 
 [build-system]
