@@ -2,6 +2,7 @@
 from matplotlib import pyplot as plt
 import matplotlib.ticker as mtick
 import matplotlib.dates as mdates
+from UliEngineering.EngineerIO import format_value
 
 def set_axis_tick_format_func(func, axis, set_major=True, set_minor=True):
     """
@@ -66,6 +67,33 @@ def set_axis_tick_format_float(axis, decimals=3, unit=None, set_major=True, set_
         axis.set_major_formatter(formatter)
     if set_minor:
         axis.set_minor_formatter(formatter)
+        
+def set_axis_tick_format_si_unit(axis, unit="V", significant_digits=3, set_major=True, set_minor=True):
+    """
+    Use UliEngineering format_value() to format the axis ticks with SI units,
+    such as "mV" or "uA".
+    """
+    set_axis_tick_format_func(lambda value, index: format_value(value, unit=unit, significant_digits=significant_digits), axis, set_major=set_major, set_minor=set_minor)
+
+def set_yaxis_tick_format_si_unit(unit="V", significant_digits=3, ax=None, set_major=True, set_minor=True):
+    """
+    Use UliEngineering format_value() to format the Y axis ticks with SI units,
+    """
+    # Create ax unless specfied
+    if ax is None:
+        ax = plt.gca()
+    # Set formatter
+    set_axis_tick_format_si_unit(ax.yaxis, unit=unit, significant_digits=significant_digits, set_major=set_major, set_minor=set_minor)
+    
+def set_xaxis_tick_format_si_unit(unit="V", significant_digits=3, ax=None, set_major=True, set_minor=True):
+    """
+    Use UliEngineering format_value() to format the X axis ticks with SI units,
+    """
+    # Create ax unless specfied
+    if ax is None:
+        ax = plt.gca()
+    # Set formatter
+    set_axis_tick_format_si_unit(ax.xaxis, unit=unit, significant_digits=significant_digits, set_major=set_major, set_minor=set_minor)
 
 def set_yaxis_tick_format_float(decimals=3, unit=None, ax=None, set_major=True, set_minor=True):
     """
