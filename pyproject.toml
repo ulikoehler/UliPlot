@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "UliPlot"
-version = "0.2.3"
+version = "0.2.4"
 description = "Utilities for convenient plotting using matplotlib and other pydata libraries"
 authors = ["Uli Köhler <github@techoverflow.net>"]
 license = "Apache License v2.0"
