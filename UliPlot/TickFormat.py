@@ -216,4 +216,4 @@ def set_xaxis_tick_format_percent(fullscale=1.0, ax=None, set_major=True, set_mi
     if ax is None:
         ax = plt.gca()
     # Set formatter
-    set_axis_tick_format_datetime(ax.xaxis, fullscale, set_major=set_major, set_minor=set_minor)
+    set_axis_tick_format_percent(ax.xaxis, fullscale, set_major=set_major, set_minor=set_minor)
